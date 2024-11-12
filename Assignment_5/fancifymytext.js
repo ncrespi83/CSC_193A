@@ -26,5 +26,10 @@ function mooText(){
     textArea.value = textArea.value.toUpperCase() + '-Moo';
     let text = textArea.value; 
 
-    let sentence = text.split
+    let sentence = text.split(' ');    //split text into array of sentences by space
+    sentence = sentence.filter(sentence => sentence.trim() !== '')  //remove empty strings
+    
+    text = sentence.join('_');  //join modified sentence into single string with "_"
+
+    textArea.value = text;  //set modified text back into text area
 }
